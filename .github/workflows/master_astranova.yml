@@ -21,15 +21,15 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: npm install, build, and test
+      - name: npm install, build
         run: |
           npm install
           npm run build --if-present
       
-      - name: Clean node_modules
+      - name: clean node_modules
         run: |
-          rm -f \
-            .node_modules
+          rm -rf \
+            ./node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -57,4 +57,4 @@ jobs:
           app-name: 'astranova'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7442F659C7F64A1EB48F56F17EC955C6 }}
-          package: .
+          package: .dist/angular-azure-template
