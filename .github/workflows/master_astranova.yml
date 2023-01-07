@@ -58,4 +58,4 @@ jobs:
           app-name: 'astranova'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7442F659C7F64A1EB48F56F17EC955C6 }}
-          package: ./angular-azure-template/
+          package: ./angular-azure-template/angular-azure-template/
